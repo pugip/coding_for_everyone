@@ -5,3 +5,6 @@ using the familiar browser, yet:
 - even show error messages and begin to decode their meaning;
 
 all on the way to making a real web page more readable and attractive.
+
+Check out the <a href="https://pugip.github.io/coding_for_everyone/slides.html#/">slides</a>.
+More artifacts will follow.
