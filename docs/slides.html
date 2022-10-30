@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.css">
         <!-- Theme used for syntax highlighting of code -->
-        <!--link rel="stylesheet" href="reveal.js/lib/css/atelier-forest-dark.css"-->
+        <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/css/atelier-forest-dark.css"-->
         <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atelier-forest-dark.min.css"-->
         <style>
             .reveal a { color:#1b4c8f; }
@@ -29,15 +29,16 @@
 <section><img data-src="images/slide-intro-2-bigConcepts.png">
 <aside class="notes"><p>
 Those fundamentals are:<br/>
-hypertext [the HT of HTML], markup language [the ML of HTML], and lots more [no need to list them out loud].  Specifically, ...<br/>
+<br/>
+hypertext (the HT of HTML), markup language (the ML of HTML), and lots more [no need to list them out loud].  Specifically, ...<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-07.png">
 <aside class="notes"><p>
-We will use a toy webpage to illustrate basic HTML and CSS [just to make sure we&#x27;re all on the same page :) ]<br/>
+We will use a toy webpage to illustrate basic HTML and CSS [just to make sure we're all on the same page :) ]<br/>
 </p></aside></section>
 <section><img data-src="images/08-16-33.png">
 <aside class="notes"><p>
-Then we&#x27;ll glance at the conversation between your browser and each website you visit<br/>
+Then we'll glance at the conversation between your browser and each website you visit<br/>
 </p></aside></section>
 <section><img data-src="images/08-30-16.png">
 <aside class="notes"><p>
@@ -45,218 +46,289 @@ Before exploring how text on the page is styled<br/>
 </p></aside></section>
 <section><img data-src="images/09-36-19.png">
 <aside class="notes"><p>
-And finally we&#x27;ll intercept user mouse actions to make a real webpage more readable.<br/>
-Let&#x27;s jump into that toy webpage...<br/>
+And finally we'll intercept user mouse actions to make a real webpage more readable.<br/>
+<br/>
+Let's jump into that toy webpage...<br/>
 </p></aside></section>
 <section><img data-src="images/07-55-46.png">
 <aside class="notes"><p>
-Your browser gets HTML documents from the websites you visit, and &quot;renders&quot; that HTML into the webpages you see.<br/>
-The HTML document is one big HTML &quot;element&quot;.  [try to use the terms &#x27;element&#x27; and &#x27;tag&#x27; consistently]<br/>
-each element is marked by a start tag and end tag; elements can contain other elements; all visible elements go into the body.<br/>
-The HTML element always contains a head element and a body element.  Here both are empty, so nothing is displayed below, until we add something to the body...<br/>
+[use the terms 'document', 'element', and 'tag' consistently]<br/>
+<br/>
+Your browser gets HTML documents from the websites you visit, and renders that HTML into the webpages you see.<br/>
+<br/>
+The HTML document is one big HTML &quot;element&quot;.<br/>
+<br/>
+Each element is marked by a start tag and end tag.<br/>
+<br/>
+Elements can contain other elements.<br/>
+<br/>
+The HTML element always contains a head element and a body element.<br/>
+<br/>
+All visible elements go into the body.<br/>
+<br/>
+Here the body is empty, so nothing is displayed below,<br/>
+<br/>
+until we add something to the body...<br/>
 </p></aside></section>
 <section><img data-src="images/07-55-53.png">
 <aside class="notes"><p>
-We used to style content by embedding it in style elements like I=italic and b=bold.  But as website grew to many pages and began to merge with other sites,<br/>
-it became costly to have styles scattered across every page, and the need to centralize style information became clear.<br/>
+Now we've added a single element to the body, a &quot;p&quot; element (for paragraph)<br/>
+<br/>
+which contains text with some words embedded in &quot;b&quot; and &quot;i&quot; elements.<br/>
+<br/>
+We used to style content by embedding it in style elements like &quot;i&quot; for italic and &quot;b&quot; for bold.<br/>
+<br/>
+But as website grew to many pages and began to merge with other sites, it became costly to have styles scattered across every page, and the need to centralize style information became clear.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-01.png">
 <aside class="notes"><p>
-So html5 introduced two new elements: div, for page divisions, which stack vertically, as paragraphs do; and span, for smaller page fragments, which stack horizontally, as words do.<br/>
-Span has no intrinsic styling, as you see, so finally let&#x27;s add something to the head element.<br/>
+Html5 introduced two new elements: div, for page divisions, which stack vertically, as paragraphs do; and span, for smaller page fragments, which stack horizontally, as words do.<br/>
+<br/>
+Span has no intrinsic styling, as you see, so finally let's add something to the head element.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-04.png">
 <aside class="notes"><p>
-The HTML &quot;style&quot; element allows us to embed CSS, or style rules, into the HTML page, tho it could be in a totally separate file.<br/>
+The HTML &quot;style&quot; element allows us to embed CSS, or style rules, into the HTML page.<br/>
+<br/>
 Each CSS rule has a selector and a property list that maps each property to its value.<br/>
+<br/>
 In this rule we select all the span elements in the page, and set both the font-style and font-weight.<br/>
+<br/>
 But to mimic our html3, we need a way to distinguish different span elements.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-07.png">
 <aside class="notes"><p>
 So we add an &quot;attribute&quot; called &quot;class&quot; to the HTML elements, and CSS selectors that start with a dot to match elements of a certain class.<br/>
+<br/>
 So for example elements of class &quot;site&quot; are bolded.<br/>
+<br/>
 This is the &quot;separation of concerns&quot;: content in HTML, styles in CSS.<br/>
+<br/>
 ...now that we have matched the html3 in html5, we can drop the html3.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-10-render-droppedHtml3.png">
 <aside class="notes"><p>
 (dropped html3)<br/>
+<br/>
 but recall the point of this is to centralize styles, and so we can move the style rules to a file without affecting the rendered page.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-11-render-cssInFile.png">
 <aside class="notes"><p>
 (css in file)<br/>
-but we&#x27;ll keep the css here in the HTML for this demo.<br/>
+<br/>
+but we'll keep the css here in the HTML for this demo.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-10-render-droppedHtml3.png">
 <aside class="notes"><p>
 Now CSS is declarative, meaning all the rules always apply, and it is possible for rules to conflict.<br/>
-So let&#x27;s add back that element-wide span rule, just to show what happens when rules conflict.<br/>
+<br/>
+So let's add back that element-wide span rule, just to show what happens when rules conflict.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-12.png">
 <aside class="notes"><p>
-What will happen if we make the .org rule green?  Which rule wins?<br/>
+What will happen if we add a green background to the .org rule?  Which background will win?<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-14.png">
 <aside class="notes"><p>
 Any declarative system that can express conflicts needs a method to resolve those conflicts.<br/>
+<br/>
 Specificity is that method for CSS.<br/>
-&#x27;dot&#x27; or class rules are considered more specific than rules that apply to all occurrences of an element, so they win.<br/>
+<br/>
+'dot' or class rules are considered more specific than rules that apply to all occurrences of an element.<br/>
+<br/>
+And the more specific rule wins.<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-17.png">
 <aside class="notes"><p>
-Note that the order of CSS rules doesn&#x27;t matter.  This is typical of declarative systems.  [can flip back and forth]<br/>
+Note that the order of CSS rules doesn't matter.  This is typical of declarative systems.  [can flip back and forth]<br/>
 </p></aside></section>
-<section><section>skipping: specificity can override part of a rule<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/css-specificity-override-partial.png">
+<section><section>skipping: specificity can override part of a rule<aside class="notes"><p>arrow down to see skipped slides about "specificity can override part of a rule"</p></aside></section><section><img data-src="images/css-specificity-override-partial.png">
 <aside class="notes"><p>
 [specificity can override part of a rule]<br/>
-we can add a span.org rule to be even more specific.  It affects all span elements with class org.<br/>
+<br/>
+We can add a span.org rule to be even more specific.  It affects all span elements with class org.<br/>
 </p></aside></section>
 </section><section><img data-src="images/07-56-19.png">
 <aside class="notes"><p>
 Pre: all this HTML, but no hypertext!<br/>
+<br/>
 To specify where to go when the user clicks, we need to put another HTML attribute somewhere to map the &quot;hypertext reference&quot; property to an actual url, or web link.<br/>
-To make the sites into clickable links, we embed them in &#x27;a&#x27; [for anchor] elements, mapping the &#x27;href&#x27; [hypertext reference] to the site&#x27;s url [universal resource locator].<br/>
+<br/>
+To make the sites into clickable links, we embed them in 'a' (for anchor) elements, mapping the 'href' (hypertext reference) attribute to the site's url (universal resource locator).<br/>
+<br/>
 [click on wikipedia link and raise separator; then go back]<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-21.png">
 <aside class="notes"><p>
-Pre: before we leave this toy page, note that HTML is a markup language, in which every element&#x27;s start and end is marked, so all this indentation that is so very readable to us is useless for the browser.<br/>
+Pre: before we leave this toy page, note that HTML is a markup language, in which every element's start and end is marked, so all this indentation that is so very readable to us is useless for the browser.<br/>
+<br/>
 And indeed, removing it makes no difference in the rendered page.<br/>
+<br/>
 The structure of a markup document can be deduced, regardless of its formatting,<br/>
+<br/>
 and this is closer to what HTML looks like in the wild.<br/>
-Now let&#x27;s look at some real web pages!<br/>
+<br/>
+Now let's look at some real web pages!<br/>
 </p></aside></section>
 <section><img data-src="images/07-56-27.png">
 <aside class="notes"><p>
 Duckduckgo is a search engine known for its privacy policy.<br/>
 </p></aside></section>
-<section><section>skipping: view page source<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/07-56-34.png">
+<section><section>skipping: view page source<aside class="notes"><p>arrow down to see skipped slides about "view page source"</p></aside></section><section><img data-src="images/07-56-34.png">
 <aside class="notes"><p>
 [view page source]<br/>
-right-click anywhere on the page and select<br/>
+<br/>
+Right-click anywhere on the page and select<br/>
+<br/>
 &quot;View page source&quot; to see the HTML that the browser<br/>
+<br/>
 on my computer got from duckduckgo.<br/>
 </p></aside></section>
 <section><img data-src="images/07-58-00.png">
 <aside class="notes"><p>
 [view page source]<br/>
-pretty messy!  No consistent indentation, but that doesn&#x27;t matter for a markup language.<br/>
+<br/>
+Pretty messy!  No consistent indentation, but that doesn't matter for a markup language.<br/>
+<br/>
 We do see the HTML start tag...<br/>
 </p></aside></section>
 <section><img data-src="images/07-58-13.png">
 <aside class="notes"><p>
 [view page source]<br/>
-the head start tag...<br/>
+<br/>
+The head start tag...<br/>
 </p></aside></section>
 <section><img data-src="images/07-58-24.png">
 <aside class="notes"><p>
 [view page source]<br/>
-and the end of the head element and start of the body.<br/>
+<br/>
+And the end of the head element and start of the body.<br/>
+<br/>
 But there is a better way.<br/>
 </p></aside></section>
 </section><section><img data-src="images/07-58-39.png">
 <aside class="notes"><p>
 If I right-click anywhere on the page I get a menu.<br/>
+<br/>
 &quot;View page source&quot; is an old option that shows us that raw unindented HTML (ask me later),<br/>
+<br/>
 whereas &quot;Inspect&quot; gives us an amazing set of tools...<br/>
 </p></aside></section>
 <section><img data-src="images/07-59-32.png">
 <aside class="notes"><p>
 This opens the devtools, or developer tools, interface, specifically the Elements tab,<br/>
+<br/>
 where we can easily collapse the body to see the essential structure of the page.<br/>
-I feel like a kid in a candy shop, there&#x27;s way too much to show you everything here,<br/>
+<br/>
+I feel like a kid in a candy shop, there's way too much to show you everything here,<br/>
+<br/>
 but before I show you how the page is styled, I gotta show you this one thing!<br/>
-</p></aside></section>
-<section><img data-src="images/08-00-52.png">
-<aside class="notes"><p>
-Let&#x27;s switch to the Network tab and watch what happens when we search for &quot;wikipedia&quot;.<br/>
-(set &quot;disable cache&quot; so that the file sizes are listed when we reload, unless u cleared the cache during setup)<br/>
 </p></aside></section>
 <section><img data-src="images/08-02-31.png">
 <aside class="notes"><p>
-(always use the mouse when you can so audience can see--click on the lens button)<br/>
+Let's switch to the Network tab and watch what happens when we search for &quot;wikipedia&quot;.<br/>
+<br/>
+[set &quot;disable cache&quot; so that the file sizes are listed when we reload, unless u cleared the cache during setup]<br/>
+<br/>
+[always use the mouse when you can so audience can see--click on the lens button]<br/>
 </p></aside></section>
 <section><img data-src="images/08-10-36.png">
 <aside class="notes"><p>
-We immediately see that there&#x27;s much more than just the HTML file<br/>
-coming from the website, 57 files in all.<br/>
+We immediately see that there's much more than just the HTML file coming from the website, 57 files in all.<br/>
 </p></aside></section>
 <section><img data-src="images/08-10-36.png">
 <aside class="notes"><p>
-The webpage we see is the result of a conversation btw the browser, called the &quot;front-end&quot; because it&#x27;s close to the user,<br/>
+The webpage we see is the result of a conversation<br/>
+<br/>
+between the browser, called the &quot;front-end&quot; because it's close to the user,<br/>
+<br/>
 and the website, called the back-end.<br/>
 </p></aside></section>
 <section><img data-src="images/08-10-48.png">
 <aside class="notes"><p>
 That first file is the HTML document.<br/>
-The &#x27;q&#x27; means query, and we can see our search term there.<br/>
+<br/>
+The 'q' means query, and we can see our search term there.<br/>
 </p></aside></section>
-<section><section>skipping: request response details<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-11-19.png">
+<section><section>skipping: request response details<aside class="notes"><p>arrow down to see skipped slides about "request response details"</p></aside></section><section><img data-src="images/08-11-19.png">
 <aside class="notes"><p>
 [request response details]<br/>
-we can see the url our browser sent its request to duckduckgo.com<br/>
+<br/>
+We can see the url our browser sent its request to duckduckgo.com<br/>
 </p></aside></section>
 <section><img data-src="images/08-12-38.png">
 <aside class="notes"><p>
 [request response details]<br/>
-the request itself, composed of &quot;headers&quot;, is another mapping of keys to values...<br/>
+<br/>
+The request itself, composed of &quot;headers&quot;, is another mapping of keys to values...<br/>
 </p></aside></section>
 <section><img data-src="images/08-12-54.png">
 <aside class="notes"><p>
 [request response details]<br/>
-and the response, yet another headers mapping, along with the file that was requested.<br/>
+<br/>
+And the response, yet another headers mapping, along with the file that was requested.<br/>
 </p></aside></section>
 <section><img data-src="images/08-13-59.png">
 <aside class="notes"><p>
 [request response details]<br/>
-we can also see the duration of each step in the process.<br/>
+<br/>
+We can also see the duration of each step in the process.<br/>
 </p></aside></section>
 <section><img data-src="images/08-15-33.png">
 <aside class="notes"><p>
 [request response details]<br/>
-but those 57 files are not the result of a single request.<br/>
+<br/>
+But those 57 files are not the result of a single request.<br/>
+<br/>
 Each file can mention other files and thus &quot;initiate&quot; new requests for those files.<br/>
+<br/>
 (can demo cache--faster loading?--and re-disable it)<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-16-33.png">
 <aside class="notes"><p>
 Each file can mention other files, and the browser requests them all from the back-end.<br/>
-Let&#x27;s switch back to the Elements tab<br/>
-where we&#x27;ll see many of these files mentioned in the HTML.<br/>
+<br/>
+Let's switch back to the Elements tab<br/>
+<br/>
+where we'll see many of these files mentioned in the HTML.<br/>
 </p></aside></section>
-<section><section>skipping: request response details<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-17-08.png">
+<section><section>skipping: request response details<aside class="notes"><p>arrow down to see skipped slides about "request response details"</p></aside></section><section><img data-src="images/08-17-08.png">
 <aside class="notes"><p>
 [request response details]<br/>
+<br/>
 [find specific downloaded file in HTML]<br/>
-and search for that first file<br/>
+<br/>
+And search for that first file<br/>
 </p></aside></section>
 <section><img data-src="images/08-17-18.png">
 <aside class="notes"><p>
 [request response details]<br/>
+<br/>
 [find specific downloaded file in HTML]<br/>
-there it is in a &#x27;link&#x27; element in the head.<br/>
+<br/>
+There it is in a 'link' element in the head.<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-17-20.png">
 <aside class="notes"><p>
 Notice that when we mouse over the body tag,<br/>
+<br/>
 the entire page is highlighted...<br/>
 </p></aside></section>
 <section><img data-src="images/08-17-23.png">
 <aside class="notes"><p>
-But as we drill down into the body element&#x27;s children,<br/>
-smaller sections of the page are highlighted. <br/>
+But as we drill down into the body element's children and grandchildren, smaller sections of the page are highlighted. <br/>
 </p></aside></section>
 <section><img data-src="images/08-25-53.png">
 <aside class="notes"><p>
 Eventually we can drill all the way down to a specific word on the page<br/>
-(happens to be embedded in a span element with some machine-generated classes).<br/>
-But if this word was our target, we didnt need to drill down level by level to get here.<br/>
+<br/>
+[happens to be embedded in a span element with some machine-generated classes].<br/>
+<br/>
+But if this word was what we we're looking for all along, we didnt need to drill down level by level to get here.<br/>
 </p></aside></section>
 <section><img data-src="images/08-26-10.png">
 <aside class="notes"><p>
-Let&#x27;s go back to the body tag,<br/>
+Let's go back to the body tag,<br/>
 </p></aside></section>
 <section><img data-src="images/08-27-10.png">
 <aside class="notes"><p>
@@ -268,13 +340,16 @@ And &quot;inspect&quot; that same word.<br/>
 </p></aside></section>
 <section><img data-src="images/08-27-45.png">
 <aside class="notes"><p>
-And poof, we&#x27;re there.  Notice that the word is in a span, which is embedded in an &#x27;a&#x27; element <br/>
-so it&#x27;s clickable, and that&#x27;s embedded in an h2 element which makes the font bigger, as in a headline.<br/>
+And poof, we're there.  Notice that the word is in a span, which is embedded in an 'a' element so it's clickable,<br/>
+<br/>
+and that's embedded in an h2 element which makes the font bigger, as in a headline.<br/>
+<br/>
 There are many more HTML elements to explore.<br/>
 </p></aside></section>
 <section><img data-src="images/08-28-04.png">
 <aside class="notes"><p>
-Let&#x27;s look at a page fragment currently hidden by the devtools interface<br/>
+Let's look at a page fragment currently hidden by the devtools interface<br/>
+<br/>
 by moving devtools to the bottom of the screen.<br/>
 </p></aside></section>
 <section><img data-src="images/08-28-41.png">
@@ -284,7 +359,8 @@ And scrolling down...<br/>
 <section><img data-src="images/08-29-11.png">
 <aside class="notes"><p>
 To reveal &quot;Country of origin:&quot;.<br/>
-let&#x27;s find how that text is styled as bold.<br/>
+<br/>
+Let's find how that text is styled as bold.<br/>
 </p></aside></section>
 <section><img data-src="images/08-29-18.png">
 <aside class="notes"><p>
@@ -292,152 +368,183 @@ As you might guess, we inspect it.<br/>
 </p></aside></section>
 <section><img data-src="images/08-29-51.png">
 <aside class="notes"><p>
-And we see it&#x27;s embedded in a span with a class.<br/>
+And we see it's embedded in a span with a class.<br/>
+<br/>
 Note the style pane on the right,<br/>
+<br/>
 which shows the styles of all the CSS rules that apply to the element we just selected.<br/>
 </p></aside></section>
-<section><section>skipping: css box model<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-29-55.png">
+<section><section>skipping: css box model<aside class="notes"><p>arrow down to see skipped slides about "css box model"</p></aside></section><section><img data-src="images/08-29-55.png">
 <aside class="notes"><p>
 [css box model]<br/>
-here we see that the element is in blue, its border [of zero thickness, thus invisible] is in yellow, and the element is separated by 7pixels of padding on the right, and some margin as well.<br/>
+<br/>
+Here we see that the element is in blue, its border (of zero thickness, thus invisible) is in yellow, and the element is separated by 7pixels of padding on the right, and some margin as well.<br/>
+<br/>
 Think of the element as being packed in a box called the border, separated from the box on the inside by padding, and separated from any adjacent boxes by margin.  This is the &quot;CSS box model&quot;<br/>
-(go back to the top of the style pane)<br/>
+<br/>
+[go back to the top of the style pane]<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-30-16.png">
 <aside class="notes"><p>
-At the first class rule,<br/>
-we see the font-weight is 600, which out of 900 is pretty bold.<br/>
+At the first class rule, we see the font-weight is 600, which out of 900 is pretty bold.<br/>
 </p></aside></section>
 <section><img data-src="images/08-30-35.png">
 <aside class="notes"><p>
 We can turn off that style to unbold the text.<br/>
-Note that we are changing the styling for all elements of this class,<br/>
-so &quot;Owner:&quot; etc are also unbolded.<br/>
+<br/>
+Note that we are changing the styling for all elements of this class, so &quot;Owner:&quot; etc are also unbolded.<br/>
 </p></aside></section>
 <section><img data-src="images/08-31-16.png">
 <aside class="notes"><p>
-We can turn that rule back on<br/>
-and increase its value to 900<br/>
-to further bold-ify the matched elements.<br/>
+We can turn that rule back on and increase its value to 900 to further bold-ify the matched elements.<br/>
 </p></aside></section>
 <section><img data-src="images/08-31-58.png">
 <aside class="notes"><p>
 And we can animate the padding with the mousewheel or arrow keys,<br/>
+<br/>
 here modified by the alt key to go by tenths,<br/>
+<br/>
 as the tooltip helpfully explains.<br/>
 </p></aside></section>
 <section><img data-src="images/08-32-36.png">
 <aside class="notes"><p>
 So the padding to the right of our focal element affects the position of elements to the right.<br/>
 </p></aside></section>
-<section><section>skipping: css box model<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-36-01.png">
+<section><section>skipping: css box model<aside class="notes"><p>arrow down to see skipped slides about "css box model"</p></aside></section><section><img data-src="images/08-36-01.png">
 <aside class="notes"><p>
 [css box model]<br/>
-we can go back to the box model diagram<br/>
+<br/>
+We can go back to the box model diagram<br/>
+<br/>
 and see that mouseover-ing the diagram<br/>
+<br/>
 highlights the specific spacing in or around the element.<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-36-57.png">
 <aside class="notes"><p>
-Just below, check out this super-rule whose selector includes many elements, so that the rule applies to all the elements on the page<br/>
-including crucially div and span, the most common.  Span is highlighted cuz the element we selected [by inspecting] is a span.<br/>
+Just below, check out this super-rule whose selector includes many elements, including div and span, the most common.<br/>
+<br/>
+So this rule applies to all the elements on the page.<br/>
+<br/>
+&quot;span&quot; is highlighted cuz the element we selected (by inspecting) is a span.<br/>
 </p></aside></section>
-<section><section>skipping: css property hierarchy<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-37-52.png">
+<section><section>skipping: css property hierarchy<aside class="notes"><p>arrow down to see skipped slides about "css property hierarchy"</p></aside></section><section><img data-src="images/08-37-52.png">
 <aside class="notes"><p>
 [css property hierarchy]<br/>
-note that CSS provides specific properties for top, right, bottom, and left.<br/>
+<br/>
+Note that CSS provides specific properties for top, right, bottom, and left.<br/>
+<br/>
 But we can specify a single number to apply to all four sides.<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-39-08.png">
 <aside class="notes"><p>
 We see that all of these elements have borders of zero thickness, meaning invisible.<br/>
-Let&#x27;s make them visible.  First we are prompted for a color (then 1px solid).<br/>
+<br/>
+Let's add a rule to make them visible.  First we are prompted for a color (then 1px solid).<br/>
 </p></aside></section>
 <section><img data-src="images/08-40-39.png">
 <aside class="notes"><p>
-To get the full effect, let&#x27;s close the devtools for a moment.<br/>
+To get the full effect, let's close the devtools for a moment.<br/>
 </p></aside></section>
 <section><img data-src="images/08-40-57.png">
 <aside class="notes"><p>
 This is a nice visual demo of the levels of nesting of the HTML elements on the page.<br/>
-Those are all 1px-wide lines, so there&#x27;s lots of levels<br/>
+<br/>
+Those are all 1px-wide lines, so there's several levels of nesting.<br/>
 </p></aside></section>
-<section><section>skipping: inspecting box elements<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-41-41.png">
+<section><section>skipping: inspecting box elements<aside class="notes"><p>arrow down to see skipped slides about "inspecting box elements"</p></aside></section><section><img data-src="images/08-41-41.png">
 <aside class="notes"><p>
 [inspecting box elements]<br/>
+<br/>
 (mouse is on text)<br/>
+<br/>
 notice that if you want to inspect a piece of text<br/>
+<br/>
 or an image, you can just mouseover it...<br/>
 </p></aside></section>
 <section><img data-src="images/08-42-25.png">
 <aside class="notes"><p>
 [inspecting box elements]<br/>
+<br/>
 (mouse is at edge of box)<br/>
+<br/>
 whereas if you want to inspect a box that contains lots of nested elements, you should mouseover just inside the edge of the box.<br/>
-OK, let&#x27;s do something useful.<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-49-21.png">
 <aside class="notes"><p>
-Here&#x27;s a webpage with a problem.<br/>
+Pre: OK, now let's do something useful.<br/>
+<br/>
+Here's a webpage with a problem.<br/>
 </p></aside></section>
 <section><img data-src="images/08-49-58.png">
 <aside class="notes"><p>
-Scrolling down, we see its testimonials are in white text<br/>
-on an often-white background, which is hard to read.<br/>
+Scrolling down, we see its testimonials are in white text on an often-white background, which is hard to read.<br/>
 </p></aside></section>
 <section><img data-src="images/08-50-22.png">
 <aside class="notes"><p>
-So of course we inspect one of the boxes<br/>
-to change its background<br/>
+So of course we inspect one of the boxes to change its background<br/>
 </p></aside></section>
-<section><section>skipping: using element.style rule in style pane<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-51-10.png">
+<section><section>skipping: using element.style rule in style pane<aside class="notes"><p>arrow down to see skipped slides about "using element.style rule in style pane"</p></aside></section><section><img data-src="images/08-51-10.png">
 <aside class="notes"><p>
 [using element.style rule in style pane]<br/>
-the &quot;element.style&quot;, the top rule in the style pane,<br/>
-applies only to the selected element, and contains<br/>
-properties embedded in the element.<br/>
+<br/>
+The &quot;element.style&quot;, the top rule in the style pane,<br/>
+<br/>
+applies only to the selected element,<br/>
+<br/>
+and contains properties embedded in the element.<br/>
 </p></aside></section>
 <section><img data-src="images/08-51-27.png">
 <aside class="notes"><p>
 [using element.style rule in style pane]<br/>
-let&#x27;s give the element a background<br/>
-that will contrast with white text.<br/>
+<br/>
+Let's give the element a background that will contrast with white text.<br/>
 </p></aside></section>
 <section><img data-src="images/08-51-42.png">
 <aside class="notes"><p>
 [using element.style rule in style pane]<br/>
-highly readable! <br/>
+<br/>
+Highly readable! <br/>
 </p></aside></section>
 <section><img data-src="images/08-51-45.png">
 <aside class="notes"><p>
 [using element.style rule in style pane]<br/>
-note that our background style now appears in the element&#x27;s style attribute.<br/>
+<br/>
+Note that our background style now appears in the element's style attribute.<br/>
+<br/>
 But how to style the other boxes?  Surely not one at a time!<br/>
 </p></aside></section>
 </section><section><img data-src="images/08-51-48.png">
 <aside class="notes"><p>
 Notice that, unlike the element.style rule, which applies only to the selected element,<br/>
+<br/>
 mousing over the next rule highlights all four boxes because it matches classes they have in common.<br/>
+<br/>
 That rule is where we want to put our background style.<br/>
 </p></aside></section>
 <section><img data-src="images/08-52-58.png">
 <aside class="notes"><p>
 Super readable!<br/>
 </p></aside></section>
-<section><section>skipping: using element.style rule in style pane<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/08-56-03.png">
+<section><section>skipping: using element.style rule in style pane<aside class="notes"><p>arrow down to see skipped slides about "using element.style rule in style pane"</p></aside></section><section><img data-src="images/08-56-03.png">
 <aside class="notes"><p>
 [using element.style rule in style pane]<br/>
+<br/>
 [crossed out styles]<br/>
-hey, notice how the style we just set is crossed out.  That&#x27;s because for the fourth box, which<br/>
-we still have selected, that background is overridden by the more specific style in the element itself--<br/>
+<br/>
+Hey, notice how the style we just set is crossed out.<br/>
+<br/>
+That's because for the fourth box, which we still have selected, that background is overridden by the more specific style in the element itself--<br/>
+<br/>
 you cant get more specific than that!<br/>
+<br/>
 (click on a different box element to demo)<br/>
 </p></aside></section>
 </section><section><img data-src="images/09-05-29.png">
 <aside class="notes"><p>
-Now, we could better respect the color scheme of the page by mouseover-ing the color sample<br/>
-(note tooltip to open color picker)...<br/>
-Let&#x27;s change the color format to one that more explicitly specifies red, green, and blue<br/>
+Now, we could better respect the color scheme of the page by mouseover-ing the color sample (note tooltip to open color picker) and clicking.<br/>
+<br/>
+Let's change the color format to one that more explicitly specifies red, green, and blue<br/>
 </p></aside></section>
 <section><img data-src="images/09-05-44.png">
 <aside class="notes"><p>
@@ -453,24 +560,29 @@ Which turns blue and gives us this cool magnifying mouse pointer<br/>
 </p></aside></section>
 <section><img data-src="images/09-06-19.png">
 <aside class="notes"><p>
-We select a more suitable color<br/>
-(we picked a purple pixel!)<br/>
+We select a more suitable color (we picked a purple pixel!)<br/>
+<br/>
 now we expect the boxes to turn purple...<br/>
 </p></aside></section>
 <section><img data-src="images/09-06-55.png">
 <aside class="notes"><p>
-And lose our black color!  Oops what happened? [dont dismiss the picker else cannot reset]<br/>
-note that before [reset to demo, either by ctrl-Z or copy/pasting the color]<br/>
-the alpha [ie opacity or opaqueness, the opposite of transparency] was 1,<br/>
-whereas now it&#x27;s zero [to let the background image show thru].<br/>
+Oops what happened? [dont dismiss the picker else cannot reset]<br/>
+<br/>
+Note that before [reset to demo, either by ctrl-Z or copy/pasting the color],<br/>
+<br/>
+the alpha (ie opacity or opaqueness, the opposite of transparency) was 1,<br/>
+<br/>
+whereas now it's zero (to let the background image show thru).<br/>
+<br/>
 Yes, in CSS we can actually specify a totally transparent color--which can be useful for making something disappear.<br/>
-But we can just set alpha to one...and now we&#x27;re more compatible with the surrounding color scheme.<br/>
+<br/>
+But we can just set alpha to one...and now we're more compatible with the surrounding color scheme.<br/>
 </p></aside></section>
 <section><img data-src="images/09-07-46.png">
 <aside class="notes"><p>
-But it&#x27;s a shame to completely hide the background image.<br/>
-Let&#x27;s explore how readable the text would be at middle levels of opacity<br/>
-(could use alt-mousewheel, but use slider so folks can see)<br/>
+But it's a shame to completely hide the background image, so let's explore how readable the text would be at middle levels of opacity<br/>
+<br/>
+[could use alt-mousewheel, but use slider so folks can see]<br/>
 </p></aside></section>
 <section><img data-src="images/09-07-57.png">
 <aside class="notes"><p>
@@ -478,71 +590,87 @@ Anywhere around 0.5 works for me.<br/>
 </p></aside></section>
 <section><img data-src="images/09-08-18.png">
 <aside class="notes"><p>
-Readability much enhanced!  Now let&#x27;s see how we could do this with javascript.<br/>
+Readability much enhanced!  Now let's see how we could do this with javascript.<br/>
+<br/>
 We turn off the background styles and note the &quot;s-info-box&quot; class,<br/>
-which we&#x27;ll need in javascript to select these &quot;info boxes&quot;,<br/>
+<br/>
+which we'll need in javascript to select these &quot;info boxes&quot;,<br/>
+<br/>
 as well as the rgb numbers we want to set the background to...<br/>
 </p></aside></section>
 <section><img data-src="images/09-10-16.png">
 <aside class="notes"><p>
-And switch to the console tab, which is a javascript console [ie conversation].<br/>
+And switch to the console tab, which is a javascript console (ie conversation).<br/>
+<br/>
 We will use a popular javascript library called jquery because it will let us move faster.<br/>
+<br/>
 A library is just a layer of added functionality; the language is still javascript.<br/>
-First we verify that jquery is loaded.  As soon as we type &#x27;j&#x27;, it autocompletes...<br/>
+<br/>
+First we verify that jquery is loaded.  As soon as we type 'j', it autocompletes...<br/>
 </p></aside></section>
 <section><img data-src="images/slide-js1.png">
 <aside class="notes"><p>
-And hitting enter, we see that jQuery is a function,<br/>
-which we&#x27;ll return to.  But is everything a function?<br/>
-What would happen if we enter something random?<br/>
+...and hitting enter, we see that jQuery is a function, which we'll return to.<br/>
+<br/>
+But is everything a function?  What would happen if we enter something random?<br/>
 </p></aside></section>
 <section><img data-src="images/slide-js2.png">
 <aside class="notes"><p>
 We see the error &quot;...is not defined&quot;. <br/>
-OK so jQuery is already defined,<br/>
-loaded by one of the many script elements on the page.<br/>
+<br/>
+So we know jQuery is already defined, loaded by one of the many script elements on the page.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-js3.png">
 <aside class="notes"><p>
 JQuery assigns the dollar sign as a synonym for the jQuery function, just to save typing.<br/>
+<br/>
 You see it gives the exact same function.<br/>
-(hit spacebar to decline any autocomplete after the $ character)<br/>
+<br/>
+[hit spacebar to decline any autocomplete after the $ character]<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes1.png">
 <aside class="notes"><p>
 To call the jQuery function, or any function, we write its name followed by any inputs in parens.<br/>
-The jQuery function takes any CSS selector as input, allowing us to specify any elements on the page just as we did in CSS.  So let&#x27;s try that...<br/>
-But javascript doesnt like it.  That&#x27;s because it&#x27;s a CSS selector, and javascript knows nothing about CSS--<br/>
-that separation_of_concerns again!  The browser&#x27;s CSS &quot;engine&quot; is separate from its js engine.<br/>
-So we need a way to tell js &quot;dont try to make sense of this, just give it to CSS&quot; which we do by quoting it.<br/>
+<br/>
+The jQuery function takes any CSS selector as input, allowing us to specify any elements on the page just as we did in CSS.  So let's try that...<br/>
+<br/>
+But javascript doesnt like it.  That's because it's a CSS selector, and javascript knows nothing about CSS.<br/>
+<br/>
+It's that separation_of_concerns again!  The browser's CSS &quot;engine&quot; is separate from its js engine.<br/>
+<br/>
+So we need a way to tell js &quot;dont try to make sense of this, just send it to CSS&quot; which we do by quoting it.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes2.png">
 <aside class="notes"><p>
 The jQuery function now &quot;returns&quot; to us a list of elements from the CSS engine.<br/>
-(why not 4?  Scroll slightly down to see the others)<br/>
+<br/>
+(why not 4?  Scroll slightly down to see the other page elements that have the same class)<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes3.png">
 <aside class="notes"><p>
-We can expand the return value to see all the elements (they&#x27;re all divs) and mouseover to see them highlighted.<br/>
-Note that they&#x27;re numbered from zero (explaining why is not simple, sorry!  But most languages do this)<br/>
+We can expand the return value to see all the elements (they're all divs) and mouseover to see them highlighted.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes4.png">
 <aside class="notes"><p>
-For example mouseover-ing element 2 highlights the third box<br/>
+Note that they're numbered from zero (explaining why is not simple, sorry!  But most languages do this).<br/>
+<br/>
+For example mouseover-ing element 2 highlights the third box.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes5.png">
 <aside class="notes"><p>
-So to choose the third box, we up-arrow and append &quot;[2]&quot;<br/>
-(near bottom of screen yet?  Ensure everyone can see, else move devtools to its own window in the top half of the screen; no need to see the entire height of the divs)<br/>
+So to choose the third box, we up-arrow and append &quot;[2]&quot;.<br/>
+<br/>
+[near bottom of screen yet?  Ensure everyone can see, else move devtools to its own window in the top half of the screen; no need to see the entire height of the divs]<br/>
 </p></aside></section>
 <section><img data-src="images/slide-selectBoxes6.png">
 <aside class="notes"><p>
-Let&#x27;s save ourselves some typing by giving that third box element a name: box3.<br/>
+Let's save ourselves some typing by giving that third box element a name: box3.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api1.png">
 <aside class="notes"><p>
-To see the functions we can call on this js &quot;object&quot;, we add a dot,<br/>
-and devtools autocomplete then offers lots of function-ality via functions...<br/>
+To see the functions that we can call on this js &quot;object&quot;, we add a dot,<br/>
+<br/>
+and the devtools autocomplete then offers lots of function-ality via functions...<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api2.png">
 <aside class="notes"><p>
@@ -555,42 +683,54 @@ And if we simply insist, we see it is undefined.<br/>
 <section><img data-src="images/slide-api4.png">
 <aside class="notes"><p>
 But by passing our box3 element object to jQuery, we get many more functions,<br/>
+<br/>
 including css...<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api5.png">
 <aside class="notes"><p>
 Which we see has lots of code, but we dont need to understand that,<br/>
-all we need to do is call the function and pass in the inputs...<br/>
+<br/>
+all we need to do is call the function and pass in the inputs in parentheses...<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api6.png">
 <aside class="notes"><p>
-With no inputs, javascript complains that it &quot;Cannot read properties of undefined&quot; so we see it&#x27;s trying to read css properties from the input, and a missing input is &quot;undefined&quot;.<br/>
-so cool!  Every error is like an xray of a small fragment of the underlying library, giving us a clue about its structure.  That call stack starts at the bottom with our code--you can see we got five layers down into jquery.<br/>
+With no inputs, javascript complains that it &quot;Cannot read properties of undefined&quot; so we see it's trying to read css properties from the input, and a missing input is &quot;undefined&quot;.<br/>
+<br/>
+So cool!  Every error is like an x-ray of a small fragment of the underlying library, giving us a clue about its structure.  That call stack starts at the bottom with our code--you can see we got five layers down into jquery.<br/>
+<br/>
 Now it just happens that javascript objects look almost the same as css property lists.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api7.png">
 <aside class="notes"><p>
 So giving an empty property list silences the error,<br/>
+<br/>
 tho of course it does no styling.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api8.png">
 <aside class="notes"><p>
 Giving a property gets us a new error, but note, by comparing the call stacks, that this time we didnt get deep into jQuery, and in fact not at all into jQuery.<br/>
-Instead, javascript complains that it doesnt know &#x27;black&#x27;, which of course we&#x27;ve seen before--[brief pause here]<br/>
-it&#x27;s that separation_of_concerns again!  Javascript doesnt know CSS colors, so what do we do?  [pause]<br/>
-we quote &#x27;black&#x27;.<br/>
+<br/>
+Instead, javascript complains that it doesnt know 'black', which of course we've seen before--[brief pause here]<br/>
+<br/>
+It's that separation_of_concerns again!  Javascript doesnt know CSS colors, so what do we do?  [pause]<br/>
+<br/>
+We quote 'black'.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-api9.png">
 <aside class="notes"><p>
 And that works!<br/>
-We dont need to quote &#x27;background&#x27; cuz javascript considers all object keys as quoted.<br/>
+<br/>
+We dont need to quote 'background' cuz javascript considers all object keys as quoted.<br/>
 </p></aside></section>
-<section><section>skipping: reinforce separation_of_concerns<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/09-26-04.png">
+<section><section>skipping: reinforce separation_of_concerns<aside class="notes"><p>arrow down to see skipped slides about "reinforce separation_of_concerns"</p></aside></section><section><img data-src="images/09-26-04.png">
 <aside class="notes"><p>
 [reinforce separation_of_concerns]<br/>
-of course we dont really want black, that was just to get oriented...<br/>
+<br/>
+Of course we dont really want black, that was just to get oriented...<br/>
+<br/>
 And of course javascript doesnt know rgb [separation_of_concerns!]<br/>
-so we must quote it...<br/>
+<br/>
+So we must quote it...<br/>
 </p></aside></section>
 </section><section><img data-src="images/slide-apiA.png">
 <aside class="notes"><p>
@@ -598,104 +738,142 @@ And quoting the rgb expression works!<br/>
 </p></aside></section>
 <section><img data-src="images/slide-apiM.png">
 <aside class="notes"><p>
-But wow, let&#x27;s look at what we did.  We selected the elements with a certain class, then selected the third one,<br/>
+But wow, let's look at what we did.  We selected the elements with a certain class, then selected the third one,<br/>
+<br/>
 then passed that element to the jQuery function to enhance its API, and finally called its css function.<br/>
+<br/>
+So we should be able to substitute the box3 definition into this statement.<br/>
+<br/>
+Substituting, we get this ugly expression, but it does the exact same thing [using full opacity to see the effect].<br/>
 </p></aside></section>
 <section><img data-src="images/slide-apiN.png">
 <aside class="notes"><p>
-Without box3, we get this ugly expression, which does the same thing [using full opacity to see the effect].<br/>
-Pretty ugly in raw form [especially at start of line], but easy to think about because of the name, or &quot;alias&quot;, we gave to box3.<br/>
-That the power of aliasing--naming intermediate values, a form of abstraction that lets us express complexity readably, step-by-step.<br/>
-Let&#x27;s restore our previous state [via up-arrow twice].<br/>
+Pretty ugly in raw form (especially at start of line: &quot;$($(&quot; is v ugly), but easy to think about because of the box3 name we assigned.<br/>
+<br/>
+That's the power of &quot;aliasing&quot;, ie naming intermediate values, a form of abstraction that lets us express complexity readably, step-by-step.<br/>
+<br/>
+Let's restore our previous state [via up-arrow twice].<br/>
 </p></aside></section>
 <section><img data-src="images/slide-apiO.png">
 <aside class="notes"><p>
-Now how can we do that for all four boxes?  We could literally do this four times, but hey, we&#x27;re coding, and coding is all about automation.  <br/>
-But javascript is imperative [not declarative like CSS], so the code executes immediately, and then it&#x27;s done, burnt out as it we&#x27;re.<br/>
+Now how can we do that for all four boxes?  We could literally do this four times, but hey, we're coding, and coding is all about automation.  <br/>
+<br/>
+But javascript is imperative (not declarative like CSS), so the code executes immediately, and then it's done, burnt out as it we're.<br/>
+<br/>
 We need a way to freeze code in a form that can be reused without burning out, on a different element each time, so it needs a slot for the element.<br/>
-And that&#x27;s exactly what functions are.<br/>
+<br/>
+And that's exactly what functions are.<br/>
 </p></aside></section>
-<section><section>skipping: function with inputs<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/09-36-04.png">
+<section><section>skipping: function with inputs<aside class="notes"><p>arrow down to see skipped slides about "function with inputs"</p></aside></section><section><img data-src="images/09-36-04.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-functions name their inputs in parentheses and list their code in braces.<br/>
+<br/>
+Functions name their inputs in parentheses and list their code in braces.<br/>
 </p></aside></section>
 <section><img data-src="images/09-36-19.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-so we can write a function that takes an element as input, passes it to jQuery to enhance functionality, and calls the css function.<br/>
-It doesnt matter how we name &#x27;element&#x27; as long as they match.  (assign the function name as the last typing you do)<br/>
-and since this is a function that changes the background color and alpha, we&#x27;ll call it...zap  : )<br/>
-(rgb colors changed, oops!)<br/>
+<br/>
+So we can write a function that takes an element as input, passes it to jQuery to enhance functionality, and calls the css function.<br/>
+<br/>
+It doesnt matter how we name 'element' as long as they match.  [assign the function name as the last typing you do]<br/>
+<br/>
+And since this is a function that changes the background color and alpha, we'll call it...zap!   : )<br/>
 </p></aside></section>
 <section><img data-src="images/09-39-12.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-we can zap box3...recalling what box3 is, we can also zap the first box.<br/>
-(our zap function returns nothing, thus the &#x27;undefined&#x27; after each call--if we wanted, we could return element or $(element))<br/>
+<br/>
+We can zap box3...recalling what box3 is, we can also zap the first box.<br/>
+<br/>
+(our zap function returns nothing, thus the 'undefined' after each call--if we wanted, we could return element or $(element))<br/>
 </p></aside></section>
 <section><img data-src="images/09-44-12.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-OK now we&#x27;ve frozen our code into a reusable package, that is, a function,<br/>
-so we&#x27;re ready to use the jQuery &#x27;each&#x27; function, which takes a function as its input,<br/>
-and calls that function for &#x27;each&#x27; element matching the CSS selector.<br/>
+<br/>
+OK now we've frozen our code into a reusable package, that is, a function,<br/>
+<br/>
+so we're ready to use the jQuery 'each' function, which takes a function as its input,<br/>
+<br/>
+and calls that function for 'each' element matching the CSS selector.<br/>
+<br/>
 So far we have called jquery functions, but jquery each() will call our function.<br/>
 </p></aside></section>
 <section><img data-src="images/09-44-37.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-but when we pass zap to each, nothing happens.<br/>
+<br/>
+But when we pass zap to each, nothing happens.<br/>
+<br/>
 &quot;when all else fails, read the docs!&quot;<br/>
 </p></aside></section>
 </section><section><img data-src="images/09-44-53.png">
 <aside class="notes"><p>
-Let&#x27;s check the documentation for the &quot;each&quot; function.<br/>
+Let's check the documentation for the &quot;each&quot; function.<br/>
+<br/>
 API means application programming interface, a set of &quot;contracts&quot;<br/>
-defining what inputs each function expects, and what functionality it provides.<br/>
+<br/>
+defining the inputs each function expects, and the functionality it provides.<br/>
 </p></aside></section>
-<section><section>skipping: function with inputs<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/09-45-08.png">
+<section><section>skipping: function with inputs<aside class="notes"><p>arrow down to see skipped slides about "function with inputs"</p></aside></section><section><img data-src="images/09-45-08.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-we see that each() expects that function to take two inputs,<br/>
+<br/>
+We see that each() expects that function to take two inputs,<br/>
+<br/>
 and it expects the 2nd input to be the element to act on,<br/>
+<br/>
 unlike our zap function, which acts on its first and only element.<br/>
+<br/>
 JQuery calls our function once for each box, but passes the element as the 2nd input.<br/>
 </p></aside></section>
 <section><img data-src="images/09-46-57.png">
 <aside class="notes"><p>
 [function with inputs]<br/>
-so let&#x27;s just insert an input before the element so element<br/>
+<br/>
+So let's just insert an input before the element so element<br/>
+<br/>
 will be the 2nd input...and it works!<br/>
 </p></aside></section>
 </section><section><img data-src="images/09-46-59.png">
 <aside class="notes"><p>
-We see that javascript sets an implicit input called &quot;this&quot; in any object&#x27;s function, and jQuery sets &quot;this&quot; to be the focal element.<br/>
+We see that javascript sets an implicit input called &quot;this&quot; in any object's function, and jQuery sets &quot;this&quot; to be the focal element.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-each1.png">
 <aside class="notes"><p>
 So our function needs no inputs...<br/>
+<br/>
 ...and that works.<br/>
-Our code here is sandwiched, called _by_ the each function [once for each matching element] and calling _into_ the css function,<br/>
+<br/>
+Our code here is sandwiched, called _by_ the each function (once for each matching element) and calling _into_ the css function,<br/>
+<br/>
 part of a &quot;call stack&quot;, as we saw in the multi-layer error message earlier.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-each2.png">
 <aside class="notes"><p>
-But javascript is about more than just mimicking CSS, it lets us define how the page behaves in response to user actions, called events.  Here&#x27;s where jQuery really shines.<br/>
-We can add an &quot;event handler&quot; for the click event to each of the matching elements, and it has the exact same API as each() does!<br/>
-Now clicking on the boxes [maybe does nothing depending on the state, so set alpha as needed] changes the background.<br/>
-But it would be really cool if we could go in both directions without changing the code... [maybe leave the mouse inside one of the colored boxes, but not critical]<br/>
+But javascript is about more than just mimicking CSS, it lets us define how the page behaves in response to user actions, called events.  Here's where jQuery really shines.<br/>
+<br/>
+We can add an &quot;event handler&quot; or &quot;callback&quot; for the click event to each of the matching elements, and it has the exact same API as each() does!<br/>
+<br/>
+Now clicking on the boxes changes the background. [or maybe does nothing depending on the state, so set alpha as needed]<br/>
+<br/>
+But it would be really cool if we could go in both directions without changing the code...<br/>
 </p></aside></section>
 <section><img data-src="images/slide-each3.png">
 <aside class="notes"><p>
 Which we can by adding handlers for the mouseenter and mouseleave events.<br/>
+<br/>
 And since javascript is an imperative language,<br/>
+<br/>
 whichever runs last applies.<br/>
 </p></aside></section>
-<section><section>skipping: internet archive<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/slide-otto-original.png">
+<section><section>skipping: internet archive<aside class="notes"><p>arrow down to see skipped slides about "internet archive"</p></aside></section><section><img data-src="images/slide-otto-original.png">
 <aside class="notes"><p>
 [internet archive]<br/>
-in case you think that this text isnt so unreadable, they recently fixed it,<br/>
+<br/>
+In case you think that this text isnt so unreadable, they recently fixed it,<br/>
+<br/>
 but thanks to the internet archive we can see what it looked like before.<br/>
 </p></aside></section>
 </section><section><img data-src="images/slide-wrap-bigConcepts2.png">
@@ -713,28 +891,36 @@ More fun<br/>
 <section><img data-src="images/slide-more-1-webmaker.png">
 <aside class="notes"><p>
 Webmaker and codepen give you interfaces that let you test your code.<br/>
+<br/>
 Webmaker, once downloaded, will work without an internet connection.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-more-2-codepen.png">
 <aside class="notes"><p>
 Codepen has lots of cool demos that you can tweak.<br/>
+<br/>
 Both are completely free.<br/>
 </p></aside></section>
 <section><img data-src="images/slide-more-3-freecodecamp.png">
 <aside class="notes"><p>
 If you decide you want to try learning to code, there are many sites.<br/>
+<br/>
 If you dont already have a favorite, try freecodecamp.org--<br/>
+<br/>
 not only are their courses free, even their certifications are free.<br/>
+<br/>
 You can ask questions in their forum and attend regular study groups.<br/>
-Currently the philly group&#x27;s biweekly &quot;study hall&quot; is virtual.<br/>
-And check out what we&#x27;re up to at princeton python, a group of open source enthusiasts in central NJ,<br/>
+<br/>
+Currently the philly group's biweekly &quot;study hall&quot; is virtual.<br/>
+<br/>
+And check out what we're up to at princeton python, a group of open source enthusiasts in central NJ,<br/>
+<br/>
 lately exploring how inclusive the coding revolution can become, thru talks like this one, our very first.<br/>
 </p></aside></section>
 <section><img data-src="images/13-27-57.png">
 <aside class="notes"><p>
 Thank our CO-sponsor for hosting this talk!  Also thanks to...<br/>
 </p></aside></section>
-<section><section>skipping: video<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/slide-thanks-1-open.png">
+<section><section>skipping: video<aside class="notes"><p>arrow down to see skipped slides about "video"</p></aside></section><section><img data-src="images/slide-thanks-1-open.png">
 <aside class="notes"><p>
 [video]<br/>
 </p></aside></section>
@@ -758,16 +944,17 @@ Thank our CO-sponsor for hosting this talk!  Also thanks to...<br/>
 <aside class="notes"><p>
 <br/>
 </p></aside></section>
-<section><section>skipping: upcoming<aside class="notes"><p>arrow down to see skipped slides</p></aside></section><section><img data-src="images/13-27-53.png">
+<section><section>skipping: upcoming<aside class="notes"><p>arrow down to see skipped slides about "upcoming"</p></aside></section><section><img data-src="images/13-27-53.png">
 <aside class="notes"><p>
 [upcoming]<br/>
 </p></aside></section>
 </section><section><img data-src="images/slide-wrap-4-final.png">
 <aside class="notes"><p>
 Questions<br/>
-(emphasize our need to hear from everyone about what you&#x27;re still unclear on, what&#x27;s missing,<br/>
-how to improve, what to add, what to do next; and make that &quot;novices are expert&quot; point.<br/>
-The rest of the slide is just for reminding folks what we talked about, to help them remember stuff they want to ask)<br/>
+<br/>
+[emphasize our need to hear from everyone about what you're still unclear on, what's missing, how to improve, what to add, what to do next; and make that &quot;novices are expert&quot; point.<br/>
+<br/>
+The rest of the slide is just for reminding folks what we talked about, to help them remember stuff they want to ask]<br/>
 </p></aside></section>
 
             </div>
@@ -782,6 +969,7 @@ The rest of the slide is just for reminding folks what we talked about, to help 
                 showNotes:true,
                 history:true,
                 slideNumber: true,
+                transition: 'none',
                 dependencies: [
                     // Syntax highlight for <code> elements
                     { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
